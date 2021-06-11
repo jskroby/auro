@@ -38,7 +38,7 @@ services:
     # image: freqtradeorg/freqtrade:stable
     # Build step - needed to install Pymongo
     build:
-      context: "./freqtrade
+      context: "./freqtrade"
       dockerfile: "./Dockerfile"
     restart: unless-stopped
     container_name: Freqtrade-Aurox
