@@ -13,6 +13,7 @@
     },
     "bid_strategy": {
         "price_side": "bid",
+        "ask_last_balance": 0.0,
         "use_order_book": false,
         "check_depth_of_market": {
             "enabled": false,
@@ -47,7 +48,6 @@
             "CRV/USDT",
             "COMP/USDT",
             "BNB/USDT",
-            "MATIC/USDT",
             "SNX/USDT",
             "REN/USDT",
             "CHZ/USDT",
@@ -80,6 +80,7 @@
             "JST/USDT",
             "KNC/USDT",
             "KSM/USDT",
+            "MATIC/USDT",
             "NEO/USDT",
             "OCEAN/USDT",
             "OGN/USDT",
@@ -89,7 +90,6 @@
             "SRM/USDT",
             "STORJ/USDT",
             "SXP/USDT",
-            "TFUEL/USDT",
             "THETA/USDT",
             "TOMO/USDT",
             "TRB/USDT",
