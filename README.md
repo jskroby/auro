@@ -15,6 +15,7 @@
 <li>Clone this repo with <code>git clone https://git.partd.guru/root/freqtrade-aurox.git</code></li>
 <li>Move into the newly created directory with <code>cd freqtrade-aurox</code></li>
 <li>Change the MongoDB login details in the <code>.env</code>, <code>aurox-signals/settings.py</code>, and <code>freqtrade/user_data/strategies/Aurox.py</code> files</li>
+<li>Optional: Change <code>aurox_timeframe</code> in <code>freqtrade/user_data_strategies/Aurox.py</code> to use a different time-frame than 1 day for the Aurox Indicator</li>
 <li>Follow [this tutorial](https://www.freqtrade.io/en/stable/telegram-usage/) and edit <code>freqtrade/user_data/config.json</code> with your Telegram Bot details so that you can interact with the bot</li>
 <li>Run the Docker Stack with <code>docker-compose up -d</code></li>
 </ol>
