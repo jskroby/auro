@@ -9,6 +9,8 @@
 ## Instructions
 
 #### Refer to [Freqtrade](https://freqtrade.io) and [Aurox-Signals](https://gitlab.com/5queezer/aurox/) for more information about how to use each.
+
+##### These instructions were written assuming you are running Ubuntu 18.04 and have Docker and Docker-Compose installed
 <ol>
 <li>Clone this repo with <code>git clone https://git.partd.guru/root/freqtrade-aurox.git</code></li>
 <li>Move into the newly created directory with <code>cd freqtrade-aurox</code></li>
