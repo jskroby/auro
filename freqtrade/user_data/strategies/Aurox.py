@@ -13,7 +13,7 @@ import freqtrade.vendor.qtpylib.indicators as qtpylib
 
 import pymongo
 
-mongo_db = pymongo.MongoClient('mongo', username='grant', password='DontforgetAboutDr.Dre3',
+mongo_db = pymongo.MongoClient('mongo', username='changeme', password='changeme1?',
                                port=27017)
 
 logger = logging.getLogger(__name__)
@@ -126,5 +126,4 @@ class Aurox(IStrategy):
             'sell'] = 1
 
         return dataframe
-
 
