@@ -17,6 +17,7 @@
 <li>Change the MongoDB login details in the <code>.env</code>, <code>aurox-signals/settings.py</code>, and <code>freqtrade/user_data/strategies/Aurox.py</code> files</li>
 <li>Optional: Change <code>aurox_timeframe</code> in <code>freqtrade/user_data_strategies/Aurox.py</code> to use a different time-frame than 1 day for the Aurox Indicator</li>
 <li>Follow [this tutorial](https://www.freqtrade.io/en/stable/telegram-usage/) and edit <code>freqtrade/user_data/config.json</code> with your Telegram Bot details so that you can interact with the bot</li>
+<li>Optional: Download the historical candle data to suppress warning messages from Freqtrade about empty candle data. Edit <code>docker-compose-download-pairs.yaml</code> with the correct timerange on the last line of the file. Then run <code>docker-compose -f docker-compose-download-pairs.yaml up</code></li>
 <li>Run the Docker Stack with <code>docker-compose up -d</code></li>
 </ol>
 
