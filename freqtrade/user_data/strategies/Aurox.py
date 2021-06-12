@@ -44,7 +44,7 @@ class Aurox(IStrategy):
     # timeframe for the Aurox indicator
     aurox_timeframe = '1d'
 
-    # Logic needed to select the correct timeframe from the MongoDB
+    # Logic needed to query the correct timeframe from the MongoDB
     if aurox_timeframe == '30m':
         timeUnit = '30_minute'
     elif aurox_timeframe == '1h':
@@ -78,7 +78,7 @@ class Aurox(IStrategy):
     def populate_indicators(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
         """
         Called every loop of the bot after bot_loop_start.
-        Calculates the TA indicators given the OHLCV data fr
+        Calculates the TA indicators given the OHLCV data
         """
 
         # Check if the entry already exists
@@ -89,11 +89,15 @@ class Aurox(IStrategy):
         if self.dp:
             if self.dp.runmode.value in ('live', 'dry_run'):
 
-                # Get Aurox data for specified timeframe
-                row_data = self.mycol.find_one({"pairDisplay": metadata['pair'], "timeUnit": self.timeUnit}, sort=[( '_id', pymongo.DESCENDING)])
-                self.custom_info[metadata['pair']][self.aurox_timeframe] = row_data['signal']
-                logger.info(metadata['pair'])
-                logger.info(self.custom_info[metadata['pair']][self.aurox_timeframe])
+                try:
+                    # Get Aurox data for specified timeframe
+                    row_data = self.mycol.find_one({"pairDisplay": metadata['pair'], "timeUnit": self.timeUnit}, sort=[( '_id', pymongo.DESCENDING)])
+                    self.custom_info[metadata['pair']][self.aurox_timeframe] = row_data['signal']
+                    logger.info(metadata['pair'])
+                    logger.info(self.custom_info[metadata['pair']][self.aurox_timeframe])
+                except:
+                    logger.info(metadata['pair'])
+                    logger.info("Failed to grab Aurox Signal from MongoDB")
 
         return dataframe
 
@@ -126,4 +130,3 @@ class Aurox(IStrategy):
             'sell'] = 1
 
         return dataframe
-
